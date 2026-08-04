@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Create AM Premium By Ino.Digital </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>🚀 Create AM Premium By Ino.Digital </h1>
+            <p class="subtitle">Buat akun Alight Motion Premium otomatis</p>
+        </div>
+
+        <!-- Status Card -->
+        <div class="status-card" id="statusCard">
+            <div class="status-item">
+                <span class="label">📊 Status</span>
+                <span class="value" id="serverStatus">🟢 Online</span>
+            </div>
+            <div class="status-item">
+                <span class="label">⏳ Cooldown</span>
+                <span class="value" id="cooldownStatus">✅ Siap</span>
+            </div>
+            <div class="status-item">
+                <span class="label">📧 Akun dibuat</span>
+                <span class="value" id="accountCount">0</span>
+            </div>
+        </div>
+
+        <!-- Tombol Utama -->
+        <button id="createBtn" class="create-btn">
+            <span class="btn-icon">✨</span>
+            <span class="btn-text">Buat Akun Premium</span>
+        </button>
+
+        <!-- Cooldown Info -->
+        <div class="cooldown-info" id="cooldownInfo">
+            ⏳ Tunggu <span id="cooldownTimer">0</span> detik sebelum membuat akun lagi
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progressContainer" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+            <p class="progress-text" id="progressText">⏳ Memulai proses...</p>
+        </div>
+
+        <!-- Result Card -->
+        <div id="resultCard" style="display: none;">
+            <div class="result-header" id="resultHeader">
+                <span id="resultIcon">✅</span>
+                <span id="resultTitle">Berhasil!</span>
+            </div>
+            <div class="result-body" id="resultBody">
+                <!-- dynamic -->
+            </div>
+        </div>
+
+        <!-- Queue Info -->
+        <div class="queue-info">
+            <span>📋 Antrian: <strong id="queueCount">0</strong></span>
+            <span>⏱️ Estimasi: <strong id="estimateTime">0</strong> menit</span>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p></p>
+            <p class="credit">© 2026 Credit: Ino.Digital</p>
+        </div>
+
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
