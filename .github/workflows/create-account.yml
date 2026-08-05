@@ -1,0 +1,31 @@
+name: Create AM Account
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-account:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install bycf
+
+      - name: Run script
+        run: |
+          node amprem.js > output.txt 2>&1 || true
+
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: account-data
+          path: |
+            premium_*.json
+            app_login_link.txt
+            output.txt
