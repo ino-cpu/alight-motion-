@@ -2,18 +2,34 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🚀 Create AM Premium By Ino.Digital </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>🚀 Create AM Premium By Ino.Digital</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
 </head>
 <body>
 
+    <!-- ===== POPUP WHATSAPP CHANNEL ===== -->
+    <div id="whatsappPopup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <button class="popup-close" id="closePopup">✕</button>
+            <div class="popup-icon">📢</div>
+            <h2>Gabung Channel WhatsApp!</h2>
+            <p>Dapatkan update terbaru seputar AM Premium</p>
+            <a href="https://whatsapp.com/channel/0029Vb7YuKV6buMHtVBW4w1W" target="_blank" class="popup-btn">
+                📲 Gabung Sekarang
+            </a>
+            <p class="popup-skip">Lewati dan lanjutkan</p>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTAINER ===== -->
     <div class="container">
 
         <!-- Header -->
         <div class="header">
-            <h1>🚀 Create AM Premium By Ino.Digital </h1>
+            <div class="logo">🚀</div>
+            <h1> Create AM Premium By Ino.Digital</h1>
             <p class="subtitle">Buat akun Alight Motion Premium otomatis</p>
         </div>
 
@@ -31,6 +47,20 @@
                 <span class="label">📧 Akun dibuat</span>
                 <span class="value" id="accountCount">0</span>
             </div>
+            <div class="status-item" style="grid-column: span 3; margin-top: 4px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;">
+                <span class="label">🤖 Telegram Notif</span>
+                <span class="value" id="notifStatus" style="font-size: 0.8rem; color: #4CAF50;">🟢 Aktif</span>
+            </div>
+        </div>
+
+        <!-- ===== INPUT NOMOR WHATSAPP ===== -->
+        <div class="wa-input-container">
+            <label for="waNumber">📱 Nomor WhatsApp</label>
+            <div class="wa-input-group">
+                <span class="wa-prefix">+62</span>
+                <input type="tel" id="waNumber" placeholder="81234567890" value="" />
+            </div>
+            <small></small>
         </div>
 
         <!-- Tombol Utama -->
@@ -71,8 +101,8 @@
 
         <!-- Footer -->
         <div class="footer">
-            <p></p>
-            <p class="credit">© 2026 Credit: Ino.Digital</p>
+            <p> </p>
+            <p class="credit">© 2026 Credit: Ino.Digital </p>
         </div>
 
     </div>
@@ -80,6 +110,7 @@
     <!-- Toast -->
     <div id="toast" class="toast"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
