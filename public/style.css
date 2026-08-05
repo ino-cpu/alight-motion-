@@ -25,9 +25,15 @@ body {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* Header */
 .header {
     text-align: center;
     margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 3rem;
+    margin-bottom: 8px;
 }
 
 .header h1 {
@@ -45,6 +51,7 @@ body {
     font-size: 0.95rem;
 }
 
+/* Status Card */
 .status-card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -75,6 +82,70 @@ body {
     font-weight: 600;
 }
 
+/* WA Input */
+.wa-input-container {
+    margin: 16px 0 20px 0;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wa-input-container label {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.wa-input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s ease;
+}
+
+.wa-input-group:focus-within {
+    border-color: #25D366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.2);
+}
+
+.wa-prefix {
+    padding: 12px 14px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wa-input-group input {
+    flex: 1;
+    padding: 12px 14px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 0.95rem;
+    min-width: 0;
+}
+
+.wa-input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.wa-input-container small {
+    display: block;
+    margin-top: 6px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.7rem;
+}
+
+/* Button */
 .create-btn {
     width: 100%;
     padding: 18px;
@@ -113,6 +184,7 @@ body {
     font-size: 1.3rem;
 }
 
+/* Cooldown */
 .cooldown-info {
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
@@ -127,15 +199,11 @@ body {
 }
 
 @keyframes pulse {
-    0%,
-    100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
+/* Progress */
 #progressContainer {
     margin-top: 20px;
 }
@@ -163,6 +231,7 @@ body {
     text-align: center;
 }
 
+/* Result */
 #resultCard {
     margin-top: 20px;
     background: rgba(255, 255, 255, 0.05);
@@ -219,6 +288,12 @@ body {
     color: #81C784;
     text-decoration: none;
     word-break: break-all;
+    display: block;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 4px 0 8px 0;
+    font-size: 0.8rem;
 }
 
 .result-body .link:hover {
@@ -230,12 +305,103 @@ body {
     padding: 8px 12px;
     border-radius: 8px;
     font-family: 'Courier New', monospace;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     display: block;
     overflow-x: auto;
     margin-top: 4px;
 }
 
+/* QR Code */
+.qr-container {
+    display: flex;
+    justify-content: center;
+    margin: 12px 0;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.qr-container canvas {
+    border-radius: 8px;
+    background: white;
+    padding: 8px;
+}
+
+/* Buttons */
+.copy-btn, .whatsapp-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.copy-btn {
+    background: linear-gradient(135deg, #43a047, #2e7d32);
+}
+
+.copy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.copy-btn:active, .whatsapp-btn:active {
+    transform: scale(0.95);
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* Deep Link Instructions */
+.deep-link-instructions {
+    margin-top: 12px;
+    padding: 16px;
+    background: rgba(255, 193, 7, 0.08);
+    border-radius: 12px;
+    border-left: 3px solid #FFC107;
+}
+
+.deep-link-instructions h4 {
+    color: #FFC107;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.deep-link-instructions ol {
+    margin-left: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+.deep-link-instructions ol li {
+    margin-bottom: 2px;
+}
+
+.deep-link-instructions .warning {
+    color: #FFC107;
+    font-weight: 600;
+}
+
+/* Queue Info */
 .queue-info {
     display: flex;
     justify-content: space-between;
@@ -251,6 +417,7 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+/* Footer */
 .footer {
     margin-top: 30px;
     text-align: center;
@@ -272,6 +439,7 @@ body {
     opacity: 0.5;
 }
 
+/* Toast */
 .toast {
     position: fixed;
     top: 20px;
@@ -305,6 +473,122 @@ body {
     border-left: 4px solid #2196F3;
 }
 
+/* ===== POPUP WHATSAPP ===== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.popup-content {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    max-width: 400px;
+    width: 90%;
+    padding: 40px 30px;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    position: relative;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popup-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.popup-icon {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+}
+
+.popup-content h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.popup-content p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.popup-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 1rem;
+}
+
+.popup-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.popup-skip {
+    margin-top: 16px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.popup-skip:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive */
 @media (max-width: 480px) {
     .container {
         padding: 20px;
@@ -312,12 +596,28 @@ body {
     .header h1 {
         font-size: 1.6rem;
     }
+    .logo {
+        font-size: 2.2rem;
+    }
     .status-card {
         grid-template-columns: 1fr;
         gap: 8px;
     }
+    .status-item:last-child {
+        grid-column: span 1 !important;
+    }
     .create-btn {
         font-size: 1rem;
         padding: 16px;
+    }
+    .btn-group {
+        flex-direction: column;
+    }
+    .copy-btn, .whatsapp-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .popup-content {
+        padding: 30px 20px;
     }
 }
